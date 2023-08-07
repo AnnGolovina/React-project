@@ -41,7 +41,7 @@ const {renderPosts} = useContext(MainContext)!;
 
   //---------HW
   const [name, setName ] = useState<string>("name");
-  const names: string[] = ["Ann", "Kyryll", "Mychil", "Oleksiy", "Maria"]
+  const names: string[] = ["Ann", "Kyryll", "Michael", "Oleksiy", "Maria"]
  
   const onClickName = (isName: string) => {
 	setName(isName);

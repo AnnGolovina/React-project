@@ -31,3 +31,12 @@
   font-size: large;
   background-color: rgb(192, 190, 190);
 }
+
+.usersBtn {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  font-size: large;
+  background-color: rgb(192, 190, 190);
+}

@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
+import { MainContext } from "../context/MainContext";
+import { json } from "stream/consumers";
 
 export const Users = () => {
   const [users, setUsers] = useState<any[]>([]);
+
+  const {maxUserNumber, setMaxUserNumber} = useContext(MainContext)!;
 
   //useEffect відслідковує useState
   //first render - компонент готовий до роботи
@@ -12,13 +16,16 @@ export const Users = () => {
 	.then(json => {
 		console.log(json, "Data");		
 		setUsers(json);
+
 	})
   }, []);
 
 
 
   //users re-render - перемальовка
-  useEffect(() => {}, [users]);
+  useEffect(() => {
+  
+  }, [users]);
 
 
 
@@ -28,7 +35,8 @@ export const Users = () => {
   return (
     <div>
       <h1>Users</h1>
-      {users.map((user, i) => (
+      <button className="usersBtn" onClick={() => setMaxUserNumber(7)}>Показати 7 користувачів</button>
+      {users.slice(0, maxUserNumber).map((user, i) => (
         <div key={`${user.name}-${i}`} className="user-card">
           <h4>{user.name}</h4>
           <p>{user.email}</p>

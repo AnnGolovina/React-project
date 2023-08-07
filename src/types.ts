@@ -5,6 +5,8 @@ export interface MainContextInterface {
 	//properly typizated setter
 	setPosts: Dispatch<PostInterface[]>;
 	renderPosts: () => JSX.Element;
+	maxUserNumber: number;
+	setMaxUserNumber: Dispatch<number>;
 }
 
 export interface PostInterface {

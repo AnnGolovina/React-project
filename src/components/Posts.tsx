@@ -18,6 +18,9 @@ export const Posts = () => {
   return (
     <div>
         <h1>Posts</h1>
+        {/*{posts.map((post: any) => <div>
+          <p>{post.title}</p>
+        </div>)}*/}
         {renderPosts()}
     </div>
   )

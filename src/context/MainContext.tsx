@@ -11,10 +11,12 @@ export const MainContextProvider = (props: PropsWithChildren) => {
   console.log(props.children);
   const [posts, setPosts] = useState<PostInterface[]>([]);
 
+  const [maxUserNumber, setMaxUserNumber] = useState<number>(3);
+
   const renderPosts = () => {
     return (
       <div className="posts">
-        {posts.map((post:any) => (
+        {posts.map((post) => (
           <div key={post.title}>
             <p>{post.title}</p>
           </div>
@@ -28,7 +30,9 @@ export const MainContextProvider = (props: PropsWithChildren) => {
       value={{
         posts: posts,
         setPosts: setPosts,
-        renderPosts: renderPosts
+        renderPosts: renderPosts,
+        maxUserNumber: maxUserNumber,
+        setMaxUserNumber: setMaxUserNumber,
       }}
     >
       {props.children}
